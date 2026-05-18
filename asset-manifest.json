@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.8533f67f.css",
+    "main.css": "/static/css/main.7597ad45.css",
     "main.js": "/static/js/main.39a2db49.js",
     "static/js/453.b05d8aa5.chunk.js": "/static/js/453.b05d8aa5.chunk.js",
     "static/media/mahle-project.jpg": "/static/media/mahle-project.0299a3e6df5747fbb0c4.jpg",
@@ -13,12 +13,12 @@
     "static/media/dlr.jpg": "/static/media/dlr.1d50e3962fc664cdda39.jpg",
     "static/media/fernuni.jpg": "/static/media/fernuni.7cefbb420a539dcc64e2.jpg",
     "index.html": "/index.html",
-    "main.8533f67f.css.map": "/static/css/main.8533f67f.css.map",
+    "main.7597ad45.css.map": "/static/css/main.7597ad45.css.map",
     "main.39a2db49.js.map": "/static/js/main.39a2db49.js.map",
     "453.b05d8aa5.chunk.js.map": "/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8533f67f.css",
+    "static/css/main.7597ad45.css",
     "static/js/main.39a2db49.js"
   ]
 }
