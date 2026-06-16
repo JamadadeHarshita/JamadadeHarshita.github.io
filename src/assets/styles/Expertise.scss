@@ -133,3 +133,31 @@
     align-items: center;
     width: 100%;
 }
+.donut-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.donut-active-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+
+    .donut-label-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+
+    .donut-label-pct {
+        font-family: 'Outfit', sans-serif;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+        letter-spacing: 0.5px;
+    }
+}
