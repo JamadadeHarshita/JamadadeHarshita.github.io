@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.549de330.css",
-    "main.js": "/static/js/main.c3d03186.js",
-    "static/js/453.6610161b.chunk.js": "/static/js/453.6610161b.chunk.js",
+    "main.css": "/static/css/main.1a2216b4.css",
+    "main.js": "/static/js/main.bbd4f598.js",
+    "static/js/453.b05d8aa5.chunk.js": "/static/js/453.b05d8aa5.chunk.js",
     "static/media/mahle-project.jpg": "/static/media/mahle-project.0299a3e6df5747fbb0c4.jpg",
     "static/media/lithuania.jpg": "/static/media/lithuania.6d829298917d9b7e2ee7.jpg",
     "static/media/pathly.jpg": "/static/media/pathly.8fa2438b15687bc2cd36.jpg",
@@ -11,12 +11,12 @@
     "static/media/dlr.jpg": "/static/media/dlr.1d50e3962fc664cdda39.jpg",
     "static/media/fernuni.jpg": "/static/media/fernuni.7cefbb420a539dcc64e2.jpg",
     "index.html": "/index.html",
-    "main.549de330.css.map": "/static/css/main.549de330.css.map",
-    "main.c3d03186.js.map": "/static/js/main.c3d03186.js.map",
-    "453.6610161b.chunk.js.map": "/static/js/453.6610161b.chunk.js.map"
+    "main.1a2216b4.css.map": "/static/css/main.1a2216b4.css.map",
+    "main.bbd4f598.js.map": "/static/js/main.bbd4f598.js.map",
+    "453.b05d8aa5.chunk.js.map": "/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.549de330.css",
-    "static/js/main.c3d03186.js"
+    "static/css/main.1a2216b4.css",
+    "static/js/main.bbd4f598.js"
   ]
 }
