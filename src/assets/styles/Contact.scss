@@ -1,106 +1,145 @@
+#contact {
+  width: 100%;
+  background-color: #1a1a2e;
+}
+
 .contact_wrapper {
-  svg {
-    font-size: 1em;
-    vertical-align: middle;
-    margin-right: 5px;
-    color: #e8c9a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 10%;
+  gap: 24px;
+
+  .say-hi-pill {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: rgba(80, 0, 202, 0.2);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
   }
 
   h1 {
-    background: linear-gradient(135deg, #ffffff 60%, #e8c9a0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-text-fill-color: unset;
+    background: none;
+
+    .highlight {
+      background: linear-gradient(135deg, #9b59b6, #e8c9a0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   }
 
   p {
-    color: rgba(255, 255, 255, 0.7);
-  }
-}
-
-.contact-form {
-  padding-top: 20px;
-
-  button {
-    float: right;
-    background-color: #5000ca;
-    color: white;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0;
     font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    border-radius: 20px;
-    padding: 8px 24px;
-    transition: all 0.2s ease;
-  }
-
-  button:hover {
-    background-color: #e8c9a0;
-    color: #0d1116;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(232, 201, 160, 0.2);
-  }
-
-  fieldset {
-    background-color: rgba(255, 255, 255, 0.04);
-    border-color: rgba(232, 201, 160, 0.2) !important;
-    border-radius: 8px !important;
-    transition: border-color 0.2s ease;
-
-    &:hover {
-      border-color: rgba(232, 201, 160, 0.4) !important;
-    }
-  }
-
-  .MuiInputBase-input {
-    color: white !important;
-  }
-
-  .MuiInputLabel-root {
-    color: rgba(255, 255, 255, 0.5) !important;
-    font-family: 'Outfit', sans-serif;
-
-    &.Mui-focused {
-      color: #e8c9a0 !important;
-    }
-  }
-
-  .MuiOutlinedInput-root {
-    &.Mui-focused fieldset {
-      border-color: #e8c9a0 !important;
-    }
   }
 }
 
-label {
-  font-size: 1.2rem;
-  font-family: 'Outfit', sans-serif;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.form-flex {
+.contact-buttons {
   display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
 }
 
-.form-flex .MuiFormControl-root {
-  width: 100%;
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  text-decoration: none;
+  border: 1.5px solid;
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 1.1rem;
+  }
 }
 
-form {
-  width: 100% !important;
+.btn-linkedin {
+  border-color: rgba(155, 89, 182, 0.4);
+  color: #9b59b6;
+  background: rgba(155, 89, 182, 0.08);
+
+  &:hover {
+    background: rgba(155, 89, 182, 0.2);
+    border-color: #9b59b6;
+    color: #9b59b6;
+    transform: translateY(-2px);
+  }
 }
 
-.body-form {
-  width: 100% !important;
-  margin-bottom: 15px !important;
+.btn-email {
+  border-color: rgba(79, 174, 147, 0.4);
+  color: #4fae93;
+  background: rgba(79, 174, 147, 0.08);
+
+  &:hover {
+    background: rgba(79, 174, 147, 0.2);
+    border-color: #4fae93;
+    color: #4fae93;
+    transform: translateY(-2px);
+  }
 }
 
-@media screen {
-  @media (max-width: 768px) {
-    .form-flex {
-      flex-direction: column;
-      gap: 0;
+.btn-github {
+  border-color: rgba(232, 201, 160, 0.4);
+  color: #e8c9a0;
+  background: rgba(232, 201, 160, 0.08);
+
+  &:hover {
+    background: rgba(232, 201, 160, 0.2);
+    border-color: #e8c9a0;
+    color: #e8c9a0;
+    transform: translateY(-2px);
+  }
+}
+
+.reply-probability {
+  font-family: 'Courier New', monospace !important;
+  font-size: 0.85rem !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin-top: 8px;
+
+  span {
+    color: #9b59b6;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact_wrapper {
+    padding: 60px 6%;
+
+    h1 {
+      font-size: 2rem;
     }
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }

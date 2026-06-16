@@ -11,7 +11,7 @@ interface Project {
   image: string | null;
   github: string | null;
   isCompany: boolean;
-  featured: boolean;
+  featured: false;
 }
 
 const projects: Project[] = [
@@ -22,13 +22,13 @@ const projects: Project[] = [
     image: mahleImg,
     github: null,
     isCompany: true,
-    featured: true,
+    featured: false,
   },
   {
     title: "Automated Test Case Generation — MAHLE",
     description: "Built an independent end-to-end LLM pipeline generating ~4,000 realistic workshop-style search queries using vehicle metadata, user personas, and historical search behaviour. Integrated DeepEval G-Eval as LLM-as-a-judge. Containerised with Docker and PostgreSQL.",
     tags: ["LLM", "Evaluation", "Docker", "Pipeline"],
-    image: mahleImg,
+    image: null,
     github: null,
     isCompany: true,
     featured: false,
@@ -40,7 +40,7 @@ const projects: Project[] = [
     image: dlrImg,
     github: null,
     isCompany: true,
-    featured: true,
+    featured: false,
   },
   {
     title: "DeepEmotion Lab",
@@ -57,6 +57,15 @@ const projects: Project[] = [
     tags: ["NLP", "LLM", "Research"],
     image: null,
     github: "https://github.com/JamadadeHarshita/Metadata-Extraction-LLM-Approach-CaseStudy",
+    isCompany: false,
+    featured: false,
+  },
+  {
+    title: "Cross-Platform Music Trend Analytics",
+    description: "Weekly ETL pipeline ingesting music data from 5 sources (Spotify, Deezer, YouTube, NPR Music, Brooklyn Vegan) into GCP Cloud Storage. Unified records under a common artist ID schema, applied dbt transformation models in BigQuery to detect rising artists, and delivered a Tableau dashboard surfacing top cross-platform trends by genre.",
+    tags: ["Data Engineering", "Cloud", "GCP"],
+    image: null,
+    github: null,
     isCompany: false,
     featured: false,
   },
@@ -114,7 +123,7 @@ function Project() {
 
   return (
     <div className="projects-container" id="projects">
-      <h1>Personal Projects</h1>
+      <h1>Projects.</h1>
       <div className="project-filters">
         {allTags.map((tag: string) => (
           <button

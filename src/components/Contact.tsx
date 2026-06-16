@@ -1,113 +1,30 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 function Contact() {
-
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
-
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
-
-  const form = useRef();
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
-
-    /* Uncomment below if you want to enable the emailJS */
-
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
-
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
-  };
-
   return (
     <div id="contact">
-      <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-          <Box
-            ref={form}
-            component="form"
-            noValidate
-            autoComplete="off"
-            className='contact-form'
-          >
-            <div className='form-flex'>
-              <TextField
-                required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
-              />
-            </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
-            </Button>
-          </Box>
+      <div className="contact_wrapper">
+        <span className="say-hi-pill">say hi 👋</span>
+        <h1>Let's build something cool <span className="highlight">together</span></h1>
+        <p>Got an interesting project, a question about RAG pipelines, or just want to talk NLP? My inbox (and DMs) are always open.</p>
+
+        <div className="contact-buttons">
+          <a href="https://www.linkedin.com/in/harshita-jamadade/" target="_blank" rel="noreferrer" className="contact-btn btn-linkedin">
+            <LinkedInIcon fontSize="small" /> Message me on LinkedIn
+          </a>
+          <a href="mailto:harshitajamadade@gmail.com" className="contact-btn btn-email">
+            <EmailIcon fontSize="small" /> Drop me an email
+          </a>
+          <a href="https://github.com/JamadadeHarshita" target="_blank" rel="noreferrer" className="contact-btn btn-github">
+            <GitHubIcon fontSize="small" /> Check out my GitHub
+          </a>
         </div>
+
+        <p className="reply-probability">probability of a reply: <span>~0.95</span> 🤩</p>
       </div>
     </div>
   );

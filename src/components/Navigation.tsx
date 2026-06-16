@@ -3,11 +3,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import LightModeIcon from '@mui/icons-material/LightMode';
 import List from '@mui/material/List';
 import ListIcon from '@mui/icons-material/List';
 import ListItem from '@mui/material/ListItem';
@@ -25,10 +23,8 @@ const navItems = [
   ['Achievements', 'achievements'],
 ];
 
-function Navigation({parentToChild, modeChange}: any) {
-  const {mode} = parentToChild;
+function Navigation({ lang, setLang }: { lang: string, setLang: (l: string) => void }) {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('');
 
   const handleDrawerToggle = () => {
@@ -37,12 +33,6 @@ function Navigation({parentToChild, modeChange}: any) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const navbar = document.getElementById("navigation");
-      if (navbar) {
-        setScrolled(window.scrollY > navbar.clientHeight);
-      }
-
-      // highlight active nav item based on scroll position
       navItems.forEach(([_, id]) => {
         const el = document.getElementById(id);
         if (el) {
@@ -53,7 +43,6 @@ function Navigation({parentToChild, modeChange}: any) {
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -70,7 +59,7 @@ function Navigation({parentToChild, modeChange}: any) {
     <Box
       className="navigation-bar-responsive"
       onClick={handleDrawerToggle}
-      sx={{ textAlign: 'center', background: mode === 'dark' ? '#1a1a2e' : '#fff', height: '100%' }}
+      sx={{ textAlign: 'center', background: '#1a1a2e', height: '100%' }}
     >
       <p style={{
         padding: '16px',
@@ -93,7 +82,7 @@ function Navigation({parentToChild, modeChange}: any) {
             <ListItemButton
               sx={{
                 textAlign: 'center',
-                color: activeSection === item[1] ? '#5000ca' : 'inherit',
+                color: activeSection === item[1] ? '#9b59b6' : '#fff',
                 fontWeight: activeSection === item[1] ? 700 : 400,
               }}
               onClick={() => scrollToSection(item[1])}
@@ -112,37 +101,35 @@ function Navigation({parentToChild, modeChange}: any) {
       <AppBar
         component="nav"
         id="navigation"
-        className={`navbar-fixed-top${scrolled ? ' scrolled' : ''}`}
+        elevation={0}
         sx={{
-          background: scrolled
-            ? mode === 'dark'
-              ? 'rgba(10, 10, 20, 0.95)'
-              : 'rgba(255,255,255,0.95)'
-            : 'transparent',
-          boxShadow: scrolled ? '0 4px 20px rgba(80, 0, 202, 0.15)' : 'none',
-          backdropFilter: scrolled ? 'blur(10px)' : 'none',
-          transition: 'all 0.4s ease',
-          borderBottom: scrolled ? '1px solid rgba(80, 0, 202, 0.1)' : 'none',
+          backgroundColor: '#1a1a2e',
+          backgroundImage: 'none',
+          boxShadow: 'none',
         }}
       >
-        <Toolbar className='navigation-bar' sx={{ justifyContent: 'space-between', padding: '0 24px' }}>
-
-          {/* LEFT — Logo / Name */}
+        <Toolbar
+          className='navigation-bar'
+          sx={{ justifyContent: 'space-between', padding: '0 24px' }}
+        >
+          {/* LEFT — Full Name */}
           <Box
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             sx={{
               cursor: 'pointer',
-              fontWeight: 800,
-              fontSize: '1.2rem',
-              letterSpacing: '0.5px',
+              fontWeight: 700,
+              fontSize: '1rem',
+              letterSpacing: '1px',
+              fontFamily: "'Space Grotesk', sans-serif",
               background: 'linear-gradient(90deg, #5000ca, #9b59b6)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: { xs: 'none', sm: 'block' },
               userSelect: 'none',
+              textTransform: 'uppercase',
             }}
           >
-            HJ
+            harshita.jamadade
           </Box>
 
           {/* MOBILE — hamburger */}
@@ -156,19 +143,18 @@ function Navigation({parentToChild, modeChange}: any) {
             <MenuIcon />
           </IconButton>
 
-          {/* RIGHT — nav items + dark mode */}
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {/* RIGHT — nav items + EN/DE toggle */}
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: '4px' }}>
               {navItems.map((item) => (
                 <Button
                   key={item[0]}
                   onClick={() => scrollToSection(item[1])}
                   sx={{
-                    color: activeSection === item[1]
-                      ? '#5000ca'
-                      : mode === 'dark' ? '#fff' : '#333',
+                    color: activeSection === item[1] ? '#9b59b6' : '#fff',
                     fontWeight: activeSection === item[1] ? 700 : 500,
                     fontSize: '0.9rem',
+                    fontFamily: "'Space Grotesk', sans-serif",
                     letterSpacing: '0.5px',
                     position: 'relative',
                     textTransform: 'none',
@@ -185,13 +171,8 @@ function Navigation({parentToChild, modeChange}: any) {
                       borderRadius: '2px',
                       transition: 'transform 0.3s ease',
                     },
-                    '&:hover::after': {
-                      transform: 'translateX(-50%) scaleX(1)',
-                    },
-                    '&:hover': {
-                      color: '#5000ca',
-                      background: 'transparent',
-                    },
+                    '&:hover::after': { transform: 'translateX(-50%) scaleX(1)' },
+                    '&:hover': { color: '#9b59b6', background: 'transparent' },
                     transition: 'color 0.3s ease',
                   }}
                 >
@@ -200,24 +181,36 @@ function Navigation({parentToChild, modeChange}: any) {
               ))}
             </Box>
 
-            {/* Dark/Light toggle */}
-            <IconButton
-              onClick={() => modeChange()}
+            {/* EN/DE Toggle */}
+            <Box
               sx={{
-                color: mode === 'dark' ? '#f0c040' : '#5000ca',
-                background: mode === 'dark' ? 'rgba(240,192,64,0.1)' : 'rgba(80,0,202,0.08)',
-                borderRadius: '50%',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  background: mode === 'dark' ? 'rgba(240,192,64,0.2)' : 'rgba(80,0,202,0.15)',
-                  transform: 'rotate(20deg)',
-                }
+                display: 'flex',
+                border: '1px solid rgba(155, 89, 182, 0.4)',
+                borderRadius: '999px',
+                overflow: 'hidden',
               }}
             >
-              {mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
-            </IconButton>
+              {['EN', 'DE'].map((l) => (
+                <Box
+                  key={l}
+                  onClick={() => setLang(l)}
+                  sx={{
+                    px: 1.5,
+                    py: 0.5,
+                    fontSize: '0.8rem',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    background: lang === l ? 'linear-gradient(90deg, #5000ca, #9b59b6)' : 'transparent',
+                    color: lang === l ? '#fff' : 'rgba(255,255,255,0.5)',
+                    transition: 'all 0.3s ease',
+                    userSelect: 'none',
+                  }}
+                >
+                  {l}
+                </Box>
+              ))}
+            </Box>
           </Box>
-
         </Toolbar>
       </AppBar>
 
@@ -232,7 +225,7 @@ function Navigation({parentToChild, modeChange}: any) {
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
-              background: mode === 'dark' ? '#1a1a2e' : '#fff',
+              background: 'rgba(89, 63, 129, 0.15)',
             },
           }}
         >

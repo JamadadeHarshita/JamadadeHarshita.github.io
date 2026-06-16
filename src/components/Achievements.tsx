@@ -91,7 +91,7 @@ function Achievements() {
   return (
     <div className="container" id="achievements">
       <div className="achievements-container">
-        <h1>Achievements</h1>
+        <h1>Achievements.</h1>
         <div className="achievements-grid">
           {achievements.map((item: Achievement, index: number) => (
             <div className="achievement-card" key={index}>

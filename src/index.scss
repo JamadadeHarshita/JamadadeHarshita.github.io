@@ -4,6 +4,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.1rem !important;
+  background-color: #1a1a2e;
 }
 
 code {
@@ -13,7 +14,7 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #0d1116;
+  background-color: #1a1a2e;
 }
 
 a {
@@ -31,16 +32,17 @@ p, a, h1, h2, h3, h4, h5, label, button {
 }
 
 h1, h2, h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
 }
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  background-color: #1a1a2e;
 
   button {
     font-size: 1.1rem;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     text-transform: initial;
     padding: 6px 10px;
   }
@@ -52,7 +54,7 @@ h1, h2, h3 {
 
 .navigation-bar-responsive {
   span, p {
-    color: #0d1116;
+    color: #1a1a2e;
     font-family: 'Outfit', sans-serif;
   }
 }
@@ -91,335 +93,6 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.light-mode {
-  background-color: #f8f4f0;
-
-  .navigation-bar {
-    background-color: #f8f4f0;
-  }
-
-  p, a, h1, h2, h3, h4, h5, label, button {
-    color: #0d1116;
-  }
-
-  a:hover {
-    color: #5000ca;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-  }
-
-  .navigation-bar svg {
-    color: #0d1116;
-  }
-
-  .about-section {
-    background-image: url("./assets/images/bg-light.png");
-
-    h1 {
-      background: linear-gradient(135deg, #0d1116 60%, #8d5524 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    p {
-      color: #8d5524;
-    }
-
-    .social_icons svg, .mobile_social_icons svg {
-      color: #0d1116;
-      &:hover {
-        color: #8d5524;
-      }
-    }
-
-    .image-wrapper img {
-      border-color: #8d5524;
-      box-shadow: 0 0 24px rgba(141, 85, 36, 0.15);
-    }
-  }
-
-  .skills-container {
-    svg {
-      color: #5000ca;
-    }
-
-    h1 {
-      background: linear-gradient(135deg, #0d1116 60%, #8d5524 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .skills-grid .skill {
-      h3 {
-        color: #8d5524;
-      }
-
-      p {
-        color: rgba(13, 17, 22, 0.7);
-      }
-    }
-
-    .flex-chips .chip-title {
-      color: #8d5524;
-    }
-  }
-
-  .chip {
-    background-color: rgba(0, 0, 0, 0.08) !important;
-    color: #0d1116 !important;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-
-    span {
-      color: #0d1116 !important;
-    }
-
-    &:hover {
-      background-color: rgba(141, 85, 36, 0.15) !important;
-    }
-  }
-
-  .vertical-timeline {
-    &::before {
-      background: linear-gradient(to bottom, #5000ca, #8d5524) !important;
-    }
-  }
-
-  .vertical-timeline--animate .vertical-timeline-element-content.bounce-in {
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
-  }
-
-  .vertical-timeline--two-columns .vertical-timeline-element-content .vertical-timeline-element-date {
-    color: #8d5524 !important;
-  }
-
-  .vertical-timeline-element-content-arrow {
-    border-right: 7px solid rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .vertical-timeline-element h4 {
-    color: #5000ca !important;
-  }
-
-  .items-container h1 {
-    background: linear-gradient(135deg, #0d1116 60%, #8d5524 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .projects-container {
-    h1 {
-      background: linear-gradient(135deg, #0d1116 60%, #8d5524 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  }
-
-  .filter-btn {
-    border-color: rgba(80, 0, 202, 0.25);
-    color: #0d1116;
-
-    &:hover {
-      border-color: #8d5524;
-      color: #8d5524;
-    }
-
-    &.active {
-      background: #5000ca;
-      color: white;
-    }
-  }
-
-  .bento-card {
-    background: white;
-    border-color: rgba(13, 17, 22, 0.1);
-
-    &:hover {
-      box-shadow: 0 16px 40px rgba(141, 85, 36, 0.12);
-      border-color: rgba(141, 85, 36, 0.3);
-    }
-  }
-
-  .bento-top {
-    h2 {
-      color: #0d1116;
-    }
-
-    p {
-      color: rgba(13, 17, 22, 0.65);
-    }
-  }
-
-  .bento-tag {
-    background: rgba(80, 0, 202, 0.08);
-    color: #5000ca;
-    border-color: rgba(80, 0, 202, 0.15);
-
-    &:hover {
-      background: rgba(141, 85, 36, 0.1);
-      color: #8d5524;
-      border-color: rgba(141, 85, 36, 0.3);
-    }
-  }
-
-  .github-btn {
-    color: #5000ca;
-    border-color: rgba(80, 0, 202, 0.4);
-
-    &:hover {
-      background: rgba(80, 0, 202, 0.08);
-      color: #5000ca;
-    }
-  }
-
-  .company-badge {
-    background: rgba(141, 85, 36, 0.1);
-    color: #8d5524;
-    border-color: rgba(141, 85, 36, 0.25);
-  }
-
-  .bento-placeholder {
-    background: linear-gradient(135deg, rgba(80, 0, 202, 0.08), rgba(141, 85, 36, 0.06));
-
-    span {
-      background: linear-gradient(135deg, #5000ca, #8d5524);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      opacity: 0.5;
-    }
-  }
-
-  .achievements-container {
-    h1 {
-      background: linear-gradient(135deg, #0d1116 60%, #8d5524 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  }
-
-  .achievement-card {
-    background: white;
-    border-color: rgba(13, 17, 22, 0.1);
-
-    &:hover {
-      box-shadow: 0 12px 32px rgba(141, 85, 36, 0.1);
-      border-color: rgba(141, 85, 36, 0.3);
-    }
-  }
-
-  .achievement-content {
-    h3 {
-      color: #0d1116;
-    }
-
-    h4 {
-      color: #8d5524;
-    }
-
-    p {
-      color: rgba(13, 17, 22, 0.65);
-    }
-  }
-
-  .achievement-date {
-    color: rgba(141, 85, 36, 0.7);
-  }
-
-  .achievement-tags .chip {
-    background-color: rgba(80, 0, 202, 0.08) !important;
-    color: #5000ca !important;
-    border-color: rgba(80, 0, 202, 0.2) !important;
-
-    span {
-      color: #5000ca !important;
-    }
-  }
-
-  .achievement-link {
-    &:hover {
-      background: rgba(141, 85, 36, 0.08);
-      border-color: #8d5524 !important;
-      color: #8d5524 !important;
-    }
-  }
-
-  .contact_wrapper {
-    svg {
-      color: #8d5524;
-    }
-
-    h1 {
-      background: linear-gradient(135deg, #0d1116 60%, #8d5524 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    p {
-      color: rgba(13, 17, 22, 0.7);
-    }
-  }
-
-  .contact-form {
-    button {
-      background-color: #5000ca;
-      color: white;
-
-      &:hover {
-        background-color: #8d5524;
-        color: white;
-      }
-    }
-
-    fieldset {
-      background-color: white;
-      border-color: rgba(141, 85, 36, 0.2) !important;
-    }
-
-    .MuiInputBase-input {
-      color: #0d1116 !important;
-    }
-
-    .MuiInputLabel-root {
-      color: rgba(13, 17, 22, 0.5) !important;
-
-      &.Mui-focused {
-        color: #8d5524 !important;
-      }
-    }
-
-    .MuiOutlinedInput-root {
-      &.Mui-focused fieldset {
-        border-color: #8d5524 !important;
-      }
-    }
-  }
-
-  footer {
-    border-top-color: rgba(141, 85, 36, 0.2);
-
-    svg {
-      color: #8d5524;
-
-      &:hover {
-        color: #5000ca;
-      }
-    }
-
-    p {
-      color: rgba(13, 17, 22, 0.5);
-
-      span {
-        color: #8d5524;
-      }
-    }
-  }
 }
 
 @media screen {

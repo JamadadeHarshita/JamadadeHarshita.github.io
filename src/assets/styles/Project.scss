@@ -1,13 +1,16 @@
 .projects-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 60px 20px;
+  align-items: flex-start;
+  padding: 60px 10%;
+  width: 100%;
+  box-sizing: border-box;
 
   h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 32px;
+    text-align: left;
     background: linear-gradient(135deg, #ffffff 60%, #e8c9a0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -19,7 +22,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 40px;
 }
 
@@ -49,13 +52,12 @@
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   width: 100%;
-  max-width: 1200px;
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   @media (max-width: 600px) {
@@ -123,7 +125,7 @@
   span {
     font-size: 3rem;
     font-weight: 800;
-    font-family: 'Syne', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     background: linear-gradient(135deg, #5000ca, #e8c9a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
