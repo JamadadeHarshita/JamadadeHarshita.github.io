@@ -1,22 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.1a2216b4.css",
-    "main.js": "/static/js/main.bbd4f598.js",
+    "main.css": "/static/css/main.15e17b90.css",
+    "main.js": "/static/js/main.46b036ef.js",
     "static/js/453.b05d8aa5.chunk.js": "/static/js/453.b05d8aa5.chunk.js",
     "static/media/mahle-project.jpg": "/static/media/mahle-project.0299a3e6df5747fbb0c4.jpg",
+    "static/media/harshi.jpg": "/static/media/harshi.859caec98966ab13dbbf.jpg",
+    "static/media/deepemotion-arch.png": "/static/media/deepemotion-arch.a2141179b994831cead4.png",
     "static/media/lithuania.jpg": "/static/media/lithuania.6d829298917d9b7e2ee7.jpg",
+    "static/media/cricket-er.png": "/static/media/cricket-er.17d2d6d240cc486dc5b8.png",
+    "static/media/spotify-dag.jpg": "/static/media/spotify-dag.e34414b4fe519d90080d.jpg",
     "static/media/pathly.jpg": "/static/media/pathly.8fa2438b15687bc2cd36.jpg",
     "static/media/tableau.jpg": "/static/media/tableau.85f1feb86afbac6942ad.jpg",
     "static/media/dlr-project.jpeg": "/static/media/dlr-project.89c5543cd3271b8e8e26.jpeg",
     "static/media/dlr.jpg": "/static/media/dlr.1d50e3962fc664cdda39.jpg",
+    "static/media/youtube-arch.png": "/static/media/youtube-arch.a39bc1f49889207a993f.png",
+    "static/media/metadata-arch.png": "/static/media/metadata-arch.d5a6dd68b09523a2554d.png",
     "static/media/fernuni.jpg": "/static/media/fernuni.7cefbb420a539dcc64e2.jpg",
     "index.html": "/index.html",
-    "main.1a2216b4.css.map": "/static/css/main.1a2216b4.css.map",
-    "main.bbd4f598.js.map": "/static/js/main.bbd4f598.js.map",
+    "main.15e17b90.css.map": "/static/css/main.15e17b90.css.map",
+    "main.46b036ef.js.map": "/static/js/main.46b036ef.js.map",
     "453.b05d8aa5.chunk.js.map": "/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a2216b4.css",
-    "static/js/main.bbd4f598.js"
+    "static/css/main.15e17b90.css",
+    "static/js/main.46b036ef.js"
   ]
 }
