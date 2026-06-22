@@ -1,10 +1,14 @@
-body {
+body, #root {
   margin: 0;
   font-family: 'Outfit', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.1rem !important;
-  background-color: #1a1a2e;
+  background-color: #08080f;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 code {
@@ -14,7 +18,8 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #1a1a2e;
+  background-color: transparent;
+  min-height: 100vh;
 }
 
 a {
@@ -38,7 +43,8 @@ h1, h2, h3 {
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #1a1a2e;
+  background-color: rgba(8, 8, 15, 0.85);
+  backdrop-filter: blur(12px);
 
   button {
     font-size: 1.1rem;
@@ -100,5 +106,22 @@ h1, h2, h3 {
     .items-container {
       padding: 5% 5%;
     }
+  }
+}
+
+/* ── Global smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Section reveal animations ── */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

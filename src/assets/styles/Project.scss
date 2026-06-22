@@ -11,10 +11,7 @@
     font-weight: 700;
     margin-bottom: 32px;
     text-align: left;
-    background: linear-gradient(135deg, #ffffff 60%, #e8c9a0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
   }
 }
 
@@ -23,7 +20,7 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .filter-btn {
@@ -50,162 +47,183 @@
   }
 }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width: 100%;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.bento-card {
-  border-radius: 16px;
-  border: 1px solid rgba(232, 201, 160, 0.12);
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
+/* ── Project list ── */
+.project-list {
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  gap: 0;
+  width: 100%;
+}
 
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(232, 201, 160, 0.08);
-    border-color: rgba(232, 201, 160, 0.3);
+.project-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 32px 0;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  cursor: default;
+
+  &.row-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  &.bento-featured {
-    grid-column: span 2;
+  &:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
 
-    @media (max-width: 600px) {
-      grid-column: span 1;
-    }
+  &:hover .project-row-image img {
+    transform: scale(1.04);
+  }
+
+  &:hover .project-row-title {
+    color: #9b59b6;
   }
 }
 
-.bento-image {
-  position: relative;
-  width: 100%;
-  height: 200px;
+.project-row-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 700;
+  width: 40px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.project-row-image {
+  width: 300px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 28px;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  &:hover img {
-    transform: scale(1.03);
-  }
-
-  .bento-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.5));
+    object-fit: contain;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease;
   }
 }
 
-.bento-placeholder {
-  width: 100%;
-  height: 140px;
-  background: linear-gradient(135deg, rgba(80, 0, 202, 0.15), rgba(232, 201, 160, 0.08));
+.project-row-placeholder {
+  width: 300px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(80, 0, 202, 0.1), rgba(232, 201, 160, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(232, 201, 160, 0.1);
+  margin-right: 28px;
 
   span {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     font-family: 'Space Grotesk', sans-serif;
-    background: linear-gradient(135deg, #5000ca, #e8c9a0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0.6;
+    color: rgba(155, 89, 182, 0.5);
   }
 }
 
-.bento-content {
-  padding: 20px;
+.project-row-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
+  min-width: 0;
 }
 
-.bento-top {
-  h2 {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 6px 0 8px;
-    color: #ffffff;
-  }
+.project-row-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-  p {
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.6);
-  }
+.project-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .company-badge {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: 3px 10px;
+  padding: 2px 10px;
   border-radius: 20px;
   background: rgba(232, 201, 160, 0.1);
   color: #e8c9a0;
   border: 1px solid rgba(232, 201, 160, 0.25);
 }
 
-.bento-bottom {
+.project-row-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.project-row-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.project-row-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  margin-top: 14px;
 }
 
-.bento-tags {
+.project-row-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
 .bento-tag {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   padding: 3px 8px;
   border-radius: 6px;
-  background: rgba(80, 0, 202, 0.15);
-  color: rgba(255, 255, 255, 0.8);
+  background: rgba(80, 0, 202, 0.12);
+  color: rgba(255, 255, 255, 0.75);
   font-weight: 500;
-  border: 1px solid rgba(80, 0, 202, 0.25);
+  border: 1px solid rgba(80, 0, 202, 0.2);
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(232, 201, 160, 0.12);
+    background: rgba(232, 201, 160, 0.1);
     border-color: rgba(232, 201, 160, 0.3);
     color: #e8c9a0;
   }
 }
 
 .github-btn {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #e8c9a0;
   text-decoration: none;
   padding: 5px 14px;
-  border: 1.5px solid rgba(232, 201, 160, 0.4);
+  border: 1.5px solid rgba(232, 201, 160, 0.35);
   border-radius: 20px;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -214,7 +232,35 @@
   &:hover {
     background: rgba(232, 201, 160, 0.1);
     border-color: #e8c9a0;
-    color: #e8c9a0;
     transform: translateX(2px);
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 40px 5%;
+  }
+
+  .project-row {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .project-row-number {
+    display: none;
+  }
+
+  .project-row-image,
+  .project-row-placeholder {
+    width: 100%;
+    height: 180px;
+    margin-right: 0;
+  }
+
+  .project-row-image img {
+    object-fit: contain;
+    padding: 12px;
   }
 }

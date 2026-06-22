@@ -103,9 +103,11 @@ function Navigation({ lang, setLang }: { lang: string, setLang: (l: string) => v
         id="navigation"
         elevation={0}
         sx={{
-          backgroundColor: '#1a1a2e',
+          backgroundColor: 'rgba(8, 8, 15, 0.8)',
+          backdropFilter: 'blur(12px)',
           backgroundImage: 'none',
           boxShadow: 'none',
+          borderBottom: '1px solid rgba(255,255,255,0.05)',
         }}
       >
         <Toolbar
@@ -121,9 +123,7 @@ function Navigation({ lang, setLang }: { lang: string, setLang: (l: string) => v
               fontSize: '1rem',
               letterSpacing: '1px',
               fontFamily: "'Space Grotesk', sans-serif",
-              background: 'linear-gradient(90deg, #5000ca, #9b59b6)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              color: '#ffffff',
               display: { xs: 'none', sm: 'block' },
               userSelect: 'none',
               textTransform: 'uppercase',

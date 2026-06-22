@@ -6,7 +6,7 @@
     width: 100%;
     padding: 0px 15%;
     min-height: 700px;
-    background-color: #1a1a2e;
+    background-color: rgba(8, 8, 15, 0.6);
     position: relative;
     overflow: hidden;
 }
@@ -105,16 +105,23 @@
         letter-spacing: 1px;
     }
 
+    .hero-bio {
+        font-size: 1rem !important;
+        color: rgba(255, 255, 255, 0.65) !important;
+        letter-spacing: 0 !important;
+        line-height: 1.7;
+        max-width: 480px;
+        margin-top: 14px !important;
+        font-family: 'Outfit', sans-serif;
+    }
+
     h1 {
         font-size: 5em;
         margin-block-start: 0px;
         margin-block-end: 0px;
         font-family: 'Space Grotesk', sans-serif;
         font-weight: 800;
-        background: linear-gradient(135deg, #ffffff 60%, #9b59b6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #ffffff;
     }
 }
 
@@ -122,14 +129,23 @@
     z-index: 2;
 
     img {
-        width: 180px;
-        height: 220px;
+        width: 190px;
+        height: 230px;
         object-fit: cover;
         object-position: top;
-        border-radius: 12px;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        animation: blob-morph 8s ease-in-out infinite;
         border: 2px solid rgba(155, 89, 182, 0.4);
-        box-shadow: 0 0 24px rgba(155, 89, 182, 0.2);
+        box-shadow: 0 0 32px rgba(155, 89, 182, 0.25);
     }
+}
+
+@keyframes blob-morph {
+    0%   { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25%  { border-radius: 30% 70% 60% 40% / 50% 60% 30% 60%; }
+    50%  { border-radius: 50% 50% 70% 30% / 40% 60% 60% 40%; }
+    75%  { border-radius: 70% 30% 40% 60% / 60% 40% 50% 50%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
 }
 
 @media screen {
@@ -176,8 +192,8 @@
         }
 
         .about-section .image-wrapper {
-            padding-left: 5%;
             width: 100%;
+            text-align: center;
         }
     }
 }

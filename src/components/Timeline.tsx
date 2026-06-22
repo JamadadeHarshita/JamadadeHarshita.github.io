@@ -76,7 +76,7 @@ function TimelineItem({ item, index, visible }: { item: any, index: number, visi
   );
 
   return (
-    <div className={`timeline-item ${visible ? 'visible' : ''}`}>
+    <div className={`timeline-item ${visible ? 'visible' : ''} ${isAbove ? 'item-above' : 'item-below'}`}>
       <div className="card-top">
         {isAbove ? card : <div className="card-spacer" />}
       </div>

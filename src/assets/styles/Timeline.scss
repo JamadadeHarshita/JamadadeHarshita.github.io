@@ -163,10 +163,7 @@
 
 .items-container {
   h1 {
-    background: linear-gradient(135deg, #ffffff 60%, #e8c9a0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
     font-size: 2.5rem;
     margin-bottom: 60px;
   }
@@ -191,16 +188,45 @@
   }
 
   .timeline-item {
-    flex-direction: row;
-    width: 100%;
-    padding-left: 50px;
-    gap: 12px;
+    display: block;
+    position: relative;
+    padding-left: 52px;
+    padding-right: 16px;
+    margin-bottom: 20px;
     opacity: 1;
     transform: none;
-  }
 
-  .card-spacer { display: none; }
-  .connector { display: none; }
+    .connector { display: none; }
+    .card-spacer { display: none; }
+
+    .timeline-dot {
+      position: absolute;
+      left: 13px;
+      top: 20px;
+    }
+
+    .card-top {
+      min-height: unset;
+      padding: 0;
+      display: block;
+    }
+
+    .card-bottom {
+      min-height: unset;
+      padding: 0;
+      display: block;
+    }
+
+    &.item-above {
+      .card-top { display: block; }
+      .card-bottom { display: none; }
+    }
+
+    &.item-below {
+      .card-top { display: none; }
+      .card-bottom { display: block; }
+    }
+  }
 
   .timeline-card {
     width: 100%;

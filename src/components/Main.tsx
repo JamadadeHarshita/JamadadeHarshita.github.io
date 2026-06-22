@@ -2,6 +2,7 @@ import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import '../assets/styles/Main.scss';
+import harshiImg from '../assets/images/harshi.jpg';
 
 function Main() {
   return (
@@ -16,7 +17,7 @@ function Main() {
           <span className="entity-chip chip-6">NER</span>
         </div>
         <div className="image-wrapper">
-          <img src="https://res.cloudinary.com/dblusbnss/image/upload/f_auto,q_auto/DSC_7163_g1mlkx" alt="Avatar" />
+          <img src={harshiImg} alt="Avatar" />
         </div>
         <div className="content">
           <div className="social_icons">
@@ -25,6 +26,9 @@ function Main() {
           </div>
           <h1>Harshita Jamadade</h1>
           <p>AI/NLP Engineer</p>
+          <p className="hero-bio">
+            I build search and language tools that solve real problems: RAG pipelines, hybrid search, and NLP systems shipped at actual companies. Based in Germany. Open to AI/ML roles in Europe.
+          </p>
           <div className="mobile_social_icons">
             <a href="https://github.com/JamadadeHarshita" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/harshita-jamadade/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
