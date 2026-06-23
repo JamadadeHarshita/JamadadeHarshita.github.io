@@ -66,10 +66,18 @@ function Chatbot() {
 
   return (
     <>
-      {/* Floating button */}
-      <button className={`chat-fab ${open ? 'fab-open' : ''}`} onClick={() => setOpen(o => !o)} aria-label="Open chat">
-        {open ? '✕' : <img src="/android-chrome-192x192.png" alt="Chat" style={{ width: 40, height: 40, objectFit: 'contain' }} />}
-      </button>
+      {/* Floating trigger */}
+      {!open && (
+        <div className="chat-trigger" onClick={() => setOpen(true)}>
+          <div className="chat-trigger-bubble">ask me anything!</div>
+          <img src="/android-chrome-192x192.png" alt="Harshi" className="chat-trigger-memoji" />
+        </div>
+      )}
+
+      {/* Close button when open */}
+      {open && (
+        <button className="chat-close" onClick={() => setOpen(false)}>✕</button>
+      )}
 
       {/* Chat window */}
       {open && (
