@@ -5,25 +5,25 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5000ca, #9b59b6);
+  background: transparent;
   border: none;
-  font-size: 1.4rem;
   cursor: pointer;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(80, 0, 202, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 28px rgba(80, 0, 202, 0.7);
   }
 
   &.fab-open {
-    background: rgba(40, 40, 60, 0.95);
+    background: rgba(40, 40, 60, 0.85);
     font-size: 1rem;
+    color: #fff;
+    border-radius: 50%;
   }
 }
 

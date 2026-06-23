@@ -68,7 +68,7 @@ function Chatbot() {
     <>
       {/* Floating button */}
       <button className={`chat-fab ${open ? 'fab-open' : ''}`} onClick={() => setOpen(o => !o)} aria-label="Open chat">
-        {open ? '✕' : <img src="/android-chrome-192x192.png" alt="Chat" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover' }} />}
+        {open ? '✕' : <img src="/android-chrome-192x192.png" alt="Chat" style={{ width: 40, height: 40, objectFit: 'contain' }} />}
       </button>
 
       {/* Chat window */}
