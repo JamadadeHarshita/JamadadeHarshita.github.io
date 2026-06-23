@@ -49,7 +49,7 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const scrollToSection = (section: string) => {
     const el = document.getElementById(section);
