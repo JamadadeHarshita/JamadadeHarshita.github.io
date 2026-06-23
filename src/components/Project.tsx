@@ -7,7 +7,6 @@ import mahleImg from '../assets/images/mahle-project.jpg';
 import dlrImg from '../assets/images/dlr-project.jpeg';
 import metadataArch from '../assets/images/metadata-arch.png';
 import youtubeArch from '../assets/images/youtube-arch.png';
-import youtubeSidemen from '../assets/images/youtube-sidemen.png';
 import deepemotionArch from '../assets/images/deepemotion-arch.png';
 import spotifyDag from '../assets/images/spotify-dag.jpg';
 import spotifyDbt from '../assets/images/spotify-dbt.jpg';

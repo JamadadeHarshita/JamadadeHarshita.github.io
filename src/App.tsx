@@ -3,6 +3,7 @@ import {
   Main, Timeline, Expertise, Project, Contact, Navigation, Footer,
 } from "./components";
 import Achievements from './components/Achievements';
+import Chatbot from './components/Chatbot';
 import './index.scss';
 import { LangContext } from './i18n/LangContext';
 import { translations, Lang } from './i18n/translations';
@@ -52,6 +53,7 @@ function App() {
       <ScrollReveal delay={50}><Achievements /></ScrollReveal>
       <ScrollReveal delay={50}><Contact /></ScrollReveal>
       <Footer />
+      <Chatbot />
     </div>
     </LangContext.Provider>
   );
