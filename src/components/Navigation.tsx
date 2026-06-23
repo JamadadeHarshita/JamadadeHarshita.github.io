@@ -233,7 +233,6 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
               boxSizing: 'border-box',
               width: drawerWidth,
               background: '#12122a',
-              background: 'rgba(89, 63, 129, 0.15)',
             },
           }}
         >
