@@ -63,15 +63,12 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
   .chat-avatar {
-    font-size: 1.6rem;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(80, 0, 202, 0.15);
     border-radius: 50%;
-    border: 1px solid rgba(80, 0, 202, 0.3);
+    object-fit: cover;
+    border: 2px solid rgba(80, 0, 202, 0.4);
+    flex-shrink: 0;
   }
 
   .chat-name {

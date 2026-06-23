@@ -54,7 +54,25 @@ ML: RoBERTa, LLaMA 3.3 70B, Mistral, Scikit-learn, PyTorch, K-Means, PCA, DeepEv
 - Technical blogger on HashNode covering LLMs, embeddings, retrieval systems
 
 --- LANGUAGES ---
-English (fluent), German (learning), Kannada, Hindi
+English (fluent), German (learning), Kannada, Hindi, Marathi — she finds learning German genuinely fun.
+
+--- WHY GERMANY ---
+Harshita has wanted to come to Germany since she was 15. She was drawn to the quality of education, the quietness and pace of life, and later discovered the work-life balance is exceptional too. It wasn't a random choice — it was a long-held dream she worked toward.
+
+--- WHAT SHE IS LOOKING FOR ---
+She is open to AI/NLP engineering roles, data engineering, or anything involving data — structured, unstructured, doesn't matter. Her domain preference is AI and NLP but she has a strong will to learn and explore new areas, which she sees as one of her biggest strengths. She is available to start immediately.
+
+--- WORKING STYLE ---
+Flexible — works well in office and from home. She adapts to whatever the team needs.
+
+--- HOBBIES & PERSONALITY ---
+Outside of tech, Harshita writes poems, paints, and curates mood boards and playlists on Pinterest and Spotify. She puts the same care into aesthetics and storytelling that she brings to her work.
+
+--- BEST PROJECT (her proudest work) ---
+The work at MAHLE is her strongest professional project — building hybrid AI search that actually improved relevance scores from 60% to 75% across 4,000 real test cases. It was shipped at a real company solving a real problem, not just a demo.
+
+--- MOST FUN PROJECT ---
+The Cross-Platform Music Analytics project (Spotify + Deezer + YouTube pipeline) was the most fun to build. She loves music and combining that with data engineering — building Airflow pipelines, dbt models, Tableau dashboards — felt creative and technical at the same time.
 
 If someone asks something not covered above, say: "I don't have that info, but feel free to email Harshita at harshitajamadade@gmail.com!"
 `;

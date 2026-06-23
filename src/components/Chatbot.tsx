@@ -7,16 +7,16 @@ interface Message {
 }
 
 const STARTER_QUESTIONS = [
-  "What's her strongest skill?",
-  "Has she worked in Germany?",
-  "Tell me about her thesis",
-  "Is she open to work?",
+  "What's her best project?",
+  "Why did she move to Germany?",
+  "What roles is she looking for?",
+  "What does she do for fun?",
 ];
 
 function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: "Hi! I'm Harshi's portfolio bot. Ask me anything about her experience, projects, or skills 👋" },
+    { role: 'assistant', content: "Hi! I'm Harshi's portfolio bot. Ask me anything about her work, projects, or what makes her tick 👋" },
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -68,17 +68,17 @@ function Chatbot() {
     <>
       {/* Floating button */}
       <button className={`chat-fab ${open ? 'fab-open' : ''}`} onClick={() => setOpen(o => !o)} aria-label="Open chat">
-        {open ? '✕' : '💬'}
+        {open ? '✕' : <img src="/android-chrome-192x192.png" alt="Chat" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover' }} />}
       </button>
 
       {/* Chat window */}
       {open && (
         <div className="chat-window">
           <div className="chat-header">
-            <span className="chat-avatar">🤖</span>
+            <img src="/android-chrome-192x192.png" alt="Harshi" className="chat-avatar" />
             <div>
               <p className="chat-name">Harshi Bot</p>
-              <p className="chat-status">Ask me anything</p>
+              <p className="chat-status">anything about my work</p>
             </div>
           </div>
 
@@ -113,7 +113,7 @@ function Chatbot() {
               value={input}
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about Harshita..."
+              placeholder="Ask about her work..."
               disabled={loading}
               autoFocus
             />
