@@ -62,7 +62,7 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
   const drawer = (
     <Box
       className="navigation-bar-responsive"
-      sx={{ textAlign: 'center', background: '#1a1a2e', height: '100%' }}
+      sx={{ textAlign: 'center', background: '#12122a', height: '100%' }}
     >
       <p style={{
         padding: '16px',
@@ -85,8 +85,12 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
             <ListItemButton
               sx={{
                 textAlign: 'center',
-                color: activeSection === item[1] ? '#9b59b6' : '#fff',
-                fontWeight: activeSection === item[1] ? 700 : 400,
+                color: activeSection === item[1] ? '#9b59b6' : '#ffffff',
+                fontWeight: activeSection === item[1] ? 700 : 500,
+                fontSize: '1rem',
+                '& .MuiListItemText-primary': {
+                  color: activeSection === item[1] ? '#9b59b6' : '#ffffff',
+                },
               }}
               onClick={() => { scrollToSection(item[1]); handleDrawerToggle(); }}
             >
@@ -228,6 +232,7 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
             '& .MuiDrawer-paper': {
               boxSizing: 'border-box',
               width: drawerWidth,
+              background: '#12122a',
               background: 'rgba(89, 63, 129, 0.15)',
             },
           }}
