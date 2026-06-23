@@ -62,7 +62,6 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
   const drawer = (
     <Box
       className="navigation-bar-responsive"
-      onClick={handleDrawerToggle}
       sx={{ textAlign: 'center', background: '#1a1a2e', height: '100%' }}
     >
       <p style={{
@@ -89,7 +88,7 @@ function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void 
                 color: activeSection === item[1] ? '#9b59b6' : '#fff',
                 fontWeight: activeSection === item[1] ? 700 : 400,
               }}
-              onClick={() => scrollToSection(item[1])}
+              onClick={() => { scrollToSection(item[1]); handleDrawerToggle(); }}
             >
               <ListItemText primary={item[0]} />
             </ListItemButton>
