@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { useLang } from '../i18n/LangContext';
+import { Lang } from '../i18n/translations';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -15,15 +17,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
-const navItems = [
-  ['Expertise', 'expertise'],
-  ['History', 'history'],
-  ['Projects', 'projects'],
-  ['Contact', 'contact'],
-  ['Achievements', 'achievements'],
-];
+const navSections = [
+  ['nav_expertise', 'expertise'],
+  ['nav_history',   'history'],
+  ['nav_projects',  'projects'],
+  ['nav_contact',   'contact'],
+  ['nav_achievements', 'achievements'],
+] as const;
 
-function Navigation({ lang, setLang }: { lang: string, setLang: (l: string) => void }) {
+function Navigation({ lang, setLang }: { lang: Lang, setLang: (l: Lang) => void }) {
+  const { t } = useLang();
+  const navItems = navSections.map(([key, id]) => [t(key), id] as [string, string]);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('');
 
@@ -190,7 +194,7 @@ function Navigation({ lang, setLang }: { lang: string, setLang: (l: string) => v
                 overflow: 'hidden',
               }}
             >
-              {['EN', 'DE'].map((l) => (
+              {(['EN', 'DE'] as Lang[]).map((l) => (
                 <Box
                   key={l}
                   onClick={() => setLang(l)}

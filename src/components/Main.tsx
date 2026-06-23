@@ -3,8 +3,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import '../assets/styles/Main.scss';
 import harshiImg from '../assets/images/harshi.jpg';
+import { useLang } from '../i18n/LangContext';
 
 function Main() {
+  const { t } = useLang();
   return (
     <div className="container">
       <div className="about-section">
@@ -25,10 +27,8 @@ function Main() {
             <a href="https://www.linkedin.com/in/harshita-jamadade/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
           </div>
           <h1>Harshita Jamadade</h1>
-          <p>AI/NLP Engineer</p>
-          <p className="hero-bio">
-            I build search and language tools that solve real problems: RAG pipelines, hybrid search, and NLP systems shipped at actual companies. Based in Germany. Open to AI/ML roles in Europe.
-          </p>
+          <p>{t('hero_title')}</p>
+          <p className="hero-bio">{t('hero_bio')}</p>
           <div className="mobile_social_icons">
             <a href="https://github.com/JamadadeHarshita" target="_blank" rel="noreferrer"><GitHubIcon/></a>
             <a href="https://www.linkedin.com/in/harshita-jamadade/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>

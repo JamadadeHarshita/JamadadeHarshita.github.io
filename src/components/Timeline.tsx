@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import '../assets/styles/Timeline.scss';
+import { useLang } from '../i18n/LangContext';
 
 import mahleLogo from '../assets/images/mahle.png';
 import dlrLogo from '../assets/images/dlr.jpg';
@@ -7,71 +8,30 @@ import fernLogo from '../assets/images/fernuni.jpg';
 import kleLogo from '../assets/images/kle.png';
 import srhLogo from '../assets/images/srh.png';
 
-const timelineData = [
-  {
-    date: "Sep 2025 – Feb 2026",
-    title: "AI Engineer Intern",
-    org: "MAHLE, Stuttgart",
-    detail: "Hybrid Search, Vector Search, Elasticsearch, DeepEval, Docker",
-    logo: mahleLogo,
-    type: "work",
-  },
-  {
-    date: "Jun – Sep 2025",
-    title: "AI/NLP Research Intern",
-    org: "DLR, Jena",
-    detail: "RAG Pipeline, BERTopic, FASTopic, OpenSearch, LLM Labelling",
-    logo: dlrLogo,
-    type: "work",
-  },
-  {
-    date: "Nov 2024 – Mar 2025",
-    title: "NLP Research Collaborator",
-    org: "FernUniversität Hagen",
-    detail: "LLM Benchmarking, Metadata Extraction, TF-IDF Chunking",
-    logo: fernLogo,
-    type: "work",
-  },
-  {
-    date: "Apr 2024 – Apr 2026",
-    title: "M.Sc. Applied Data Science",
-    org: "SRH Hochschule, Heidelberg",
-    detail: "GPA 1.9 · Thesis: Fine-Grained Emotion Detection",
-    logo: srhLogo,
-    type: "education",
-  },
-  {
-    date: "Aug – Sep 2022",
-    title: "Data Science Intern",
-    org: "Varcons Technology, India",
-    detail: "Sentiment Analysis, NLP, Naive Bayes, Random Forest",
-    logo: null,
-    type: "work",
-  },
-  {
-    date: "2019 – 2023",
-    title: "B.E. Computer Science",
-    org: "KLE College, India",
-    detail: "GPA 8.02/10",
-    logo: kleLogo,
-    type: "education",
-  },
+const timelineMeta = [
+  { date: "Sep 2025 – Feb 2026", titleKey: 'tl0_title' as const, orgKey: 'tl0_org' as const, detailKey: 'tl0_detail' as const, logo: mahleLogo, type: "work" },
+  { date: "Jun – Sep 2025",      titleKey: 'tl1_title' as const, orgKey: 'tl1_org' as const, detailKey: 'tl1_detail' as const, logo: dlrLogo,   type: "work" },
+  { date: "Nov 2024 – Mar 2025", titleKey: 'tl2_title' as const, orgKey: 'tl2_org' as const, detailKey: 'tl2_detail' as const, logo: fernLogo,  type: "work" },
+  { date: "Apr 2024 – Apr 2026", titleKey: 'tl3_title' as const, orgKey: 'tl3_org' as const, detailKey: 'tl3_detail' as const, logo: srhLogo,   type: "education" },
+  { date: "Aug – Sep 2022",      titleKey: 'tl4_title' as const, orgKey: 'tl4_org' as const, detailKey: 'tl4_detail' as const, logo: null,      type: "work" },
+  { date: "2019 – 2023",         titleKey: 'tl5_title' as const, orgKey: 'tl5_org' as const, detailKey: 'tl5_detail' as const, logo: kleLogo,   type: "education" },
 ];
 
-function TimelineItem({ item, index, visible }: { item: any, index: number, visible: boolean }) {
+function TimelineItem({ item, index, visible }: { item: typeof timelineMeta[0], index: number, visible: boolean }) {
+  const { t } = useLang();
   const isAbove = index % 2 === 0;
   const isWork = item.type === "work";
 
   const card = (
     <div className="timeline-card">
       {item.logo
-        ? <img src={item.logo} alt={item.org} className="card-logo" />
+        ? <img src={item.logo} alt={t(item.orgKey)} className="card-logo" />
         : <div className="card-logo-placeholder">💼</div>
       }
       <div className="card-date">{item.date}</div>
-      <div className="card-title">{item.title}</div>
-      <div className="card-org">{item.org}</div>
-      <div className="card-detail">{item.detail}</div>
+      <div className="card-title">{t(item.titleKey)}</div>
+      <div className="card-org">{t(item.orgKey)}</div>
+      <div className="card-detail">{t(item.detailKey)}</div>
     </div>
   );
 
@@ -91,11 +51,12 @@ function TimelineItem({ item, index, visible }: { item: any, index: number, visi
 }
 
 function Timeline() {
-  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(timelineData.length).fill(false));
+  const { t } = useLang();
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(timelineMeta.length).fill(false));
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const observers = itemRefs.current.map((ref, i) => {
+    const observers = itemRefs.current.map((ref: HTMLDivElement | null, i: number) => {
       if (!ref) return null;
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -118,10 +79,10 @@ function Timeline() {
   return (
     <div id="history">
       <div className="items-container">
-        <h1>Career History.</h1>
+        <h1>{t('timeline_heading')}</h1>
         <div className="horizontal-timeline">
           <div className="timeline-line" />
-          {timelineData.map((item, i) => (
+          {timelineMeta.map((item, i) => (
             <div
               key={i}
               ref={el => { itemRefs.current[i] = el; }}
