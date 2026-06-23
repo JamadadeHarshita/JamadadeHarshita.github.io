@@ -103,7 +103,7 @@ function ProjectRow({ project, index }: { project: ProjectMeta; index: number })
   );
 }
 
-function Project() {
+function ProjectSection() {
   const { t } = useLang();
   const [activeTag, setActiveTag] = useState("All");
 
@@ -134,4 +134,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default ProjectSection;
