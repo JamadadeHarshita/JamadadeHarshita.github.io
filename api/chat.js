@@ -109,12 +109,13 @@ module.exports = async function handler(req, res) {
         'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
       },
       body: JSON.stringify({
-        model: 'llama-3.1-8b-instant',
+        model: 'openai/gpt-oss-20b',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...messages,
         ],
-        max_tokens: 200,
+        max_tokens: 800,
+        reasoning_effort: 'low'
         temperature: 0.7,
       }),
     });
